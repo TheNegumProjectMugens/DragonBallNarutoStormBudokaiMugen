@@ -1,0 +1,22 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Katon Gokakyu no Jutsu
+
+D,DB,B,a - Katon Bakufu Ranbu
+
+D,DF,F,b - Kamui
+
+D,DB,B,b - Kamui Dodge
+
+D,DF,F,c - Mokuton
+
+D,DB,B,c - Kuchiyose Juubi: Tenpenchi

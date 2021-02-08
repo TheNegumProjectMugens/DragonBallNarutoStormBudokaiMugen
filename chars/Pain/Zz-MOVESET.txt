@@ -1,0 +1,30 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A or B In Air - Air Combo
+
+C In Air - Shinra Tensei
+
+S - Power Charge
+
+SPECIALS:
+
+D,DF,F,a - Shurado
+
+D,DB,B,a - Gakido: Fujutsu Kyuin
+
+D,DF,F,b - Ningendo: Kyukon no Jutsu
+
+D,DB,B,b - Jigokudo
+
+D,DF,F,c - Shinra Tensei
+
+D,DB,B,c - Chibaku Tensei
+
+SUPER:
+
+D,DF,F,D,DF,F,a+b - Full Shinra Tensei

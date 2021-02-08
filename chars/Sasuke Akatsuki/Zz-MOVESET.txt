@@ -1,0 +1,25 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+S - Power Charge
+
+SPECIALS:
+
+D,DF,F,a - Katon Gokakyu no Jutsu
+
+D,DB,B,a - Katon Goryuka no Jutsu
+
+D,DF,F,b - Chidori(HOLD)
+
+D,DB,B,b - Chidori Nagashi
+
+D,DF,F,c - Amaterasu
+
+D,DB,B,c - Genjutsu Mangekyo Sharingan
+

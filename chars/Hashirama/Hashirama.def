@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Hashirama"
+displayname ="Hashirama"
+versiondate =08/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Hashirama.sff
+anim =Hashirama.air
+sound =Hashirama.snd
+cmd =Hashirama.cmd
+cns =Hashirama.cns
+stcommon =common1.cns
+st =Hashirama.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

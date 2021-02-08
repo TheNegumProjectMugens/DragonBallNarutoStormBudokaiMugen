@@ -1,0 +1,58 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A In Air - Air Combo 1
+
+B In Air - Air Combo 2
+
+C In Air - Rasengan
+
+SPECIALS:
+
+D,DF,F,a - Rasengan(HOLD)
+
+D,DB,B,a - Cho Oodama Rasengan
+
+D,DF,F,b - Kuchiyose Yatai Kuzushi no Jutsu
+
+D,DB,B,b - Hari Jizo
+
+D,DF,F,c - Kekkai Tengai Hojin
+
+D,DB,B,c - Katon Gamayu Endan
+
+TRANSFORMS:
+
+* SENNIN MODE:
+
+Hold S - Sennin Charge
+
+Sennin Mode Movelist:
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A or B In Air - Air Combo
+
+C In Air - Air Rasengan
+
+SPECIALS:
+
+D,DF,F,a - Rasengan(HOLD)
+
+D,DB,B,a - Katon Dai Endan
+
+D,DF,F,b - Senpo Kebari Senbon
+
+D,DB,B,b - Magen Gamarinsho
+
+D,DF,F,c - Senpo Goemon
+
+D,DB,B,c - Senpo Cho Oodama Rasengan

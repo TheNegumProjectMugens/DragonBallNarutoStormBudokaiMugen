@@ -1,0 +1,50 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A or B In Air - Air Combo
+
+C In Air - Taju Kage Bunshin no Jutsu
+
+SPECIALS:
+
+D,DF,F,a - Rasengan(HOLD)
+
+D,DB,B,a - Kyubi Rasengan
+
+D,DF,F,b - Kuchiyose Gamakichi
+
+D,DB,B,b - Kuchiyose Gamatatsu
+
+D,DF,F,c - Fuuton Rasen Shuriken
+
+D,DB,B,c - Kyubi Rage
+
+TRANSFORM:
+
+* 4 TAILS MODE:
+
+Down + S - 4 Tails Mode
+
+4 Tails Mode Movelist:
+
+A, B or C - Ground Combo
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - 4 Tails Bijuudama
+
+D,DB,B,a - Kyubi Shock
+
+D,DF,F,b - Angry Roar
+
+D,DB,B,b - Kyubi Hunt
+
+D,DF,F,c - Chakra Canon
+
+D,DB,B,c - Chakra Blast

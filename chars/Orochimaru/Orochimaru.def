@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Orochimaru"
+displayname ="Orochimaru"
+versiondate =21/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Orochimaru.sff
+anim =Orochimaru.air
+sound =Orochimaru.snd
+cmd =Orochimaru.cmd
+cns =Orochimaru.cns
+stcommon =common1.cns
+st =Orochimaru.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

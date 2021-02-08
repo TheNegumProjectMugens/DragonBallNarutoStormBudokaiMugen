@@ -1,0 +1,336 @@
+;===============================================================================
+; INTELIGENCIA ARTIFICIAL:
+;===============================================================================
+[Statedef -2]
+
+[State 0, Run]
+type = ChangeState
+triggerall = var(5) = 0
+triggerall = stateno != 60
+triggerall = stateno != 65
+triggerall = stateno != 70
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 100
+trigger1 = random < (ailevel * 100)/2
+value = ifelse(pos y >= 0,60,65)
+
+[State 0, Run Atras]
+type = ChangeState
+triggerall = var(5) = 0
+triggerall = stateno != 60
+triggerall = stateno != 65
+triggerall = stateno != 70
+triggerall = backedgebodydist > 50
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 100 && p2movetype = A
+trigger1 = random < (ailevel * 100)/4
+value = 70
+
+[State 0, Guard]
+type = ChangeState
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = (p2bodydist x < 50 && p2movetype = A) || (enemy,numproj > 0)
+trigger1 = random < (ailevel * 100)/2
+value = ifelse(statetype = A,132,130)
+
+; SUSANOO:
+
+[State 0, SUSANOO]
+type = ChangeState
+triggerall = power >= 3000
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)*2
+value = 3000
+
+; GOLPES NORMALES:
+
+[State 0, A,B & C]
+type = ChangeState
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+trigger1 = random < (ailevel * 100)
+value = ifelse(random < 500,200,ifelse(random < 500,300,ifelse(var(2) = 1,2400,400)))
+
+[State 0, Air Combo]
+type = ChangeState
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [-30,30]
+trigger1 = random < (ailevel * 100)
+value = 600
+
+; SPECIALS:
+
+[State 0, Katon Gokakyu no Jutsu]
+type = ChangeState
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)/2
+value = 1000
+
+[State 0, Katon Hosenka no Jutsu]
+type = ChangeState
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)/2
+value = 1100
+
+[State 0, Amaterasu]
+type = ChangeState
+triggerall = numhelper(1250) = 0
+Triggerall = power >= 1500
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)
+value = 1200
+
+[State 0, Tsukuyomi Mode]
+type = ChangeState
+triggerall = numhelper(1350) = 0
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [50,100]
+trigger1 = random < (ailevel * 100)/2
+value = 1300
+
+[State 0, Explosive Kage Bunshin]
+type = ChangeState
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+trigger1 = p2bodydist x < 50
+trigger1 = random < (ailevel * 100)/4
+trigger2 = p2bodydist x < 100 && p2movetype = A
+trigger2 = random < (ailevel * 100)/2
+value = 1400
+
+[State 0, Suiton Suiryudan no Jutsu]
+type = ChangeState
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [60,120]
+trigger1 = random < (ailevel * 100)/2
+value = 1500
+;===============================================================================
+;---------------------------Estados usados Siempre------------------------------
+;===============================================================================
+[Statedef -3]
+[State 0, Helper de Conexiones]
+type = Helper
+Triggerall = numhelper(700) = 0
+trigger1 = stateno = 200 && movecontact
+trigger2 = stateno = 211 && time > 0
+trigger3 = stateno = 220 && time > 9 && numhelper(225) = 0
+trigger4 = stateno = 300 && movecontact
+trigger5 = stateno = 310 && time > 30
+trigger6 = stateno = 320 && time > 0 && numhelper(325) = 0
+trigger7 = stateno = 400 && movecontact
+trigger8 = stateno = 410 && movecontact
+trigger9 = (stateno = 420 && time > 40) || (stateno = 431 && time > 50)
+trigger10 = stateno = 1000 && time > 60
+trigger11 = stateno = 1100 && time > 120
+trigger12 = stateno = 1200 && time > 30 && numhelper(1250) = 0
+trigger13 = stateno = 1300 && time > 60
+trigger14 = stateno = 1500 && numhelper(1550) = 0 && time > 30
+helpertype = normal
+name = "Helper de Conexiones"
+ID = 700
+stateno = 700
+pos = 999999,999999
+postype = p1
+
+[State 0, Helper Pared]
+type = Helper
+trigger1 = enemy,stateno = 327 && numhelper(328) = 0
+helpertype = normal
+name = "Helper Pared"
+ID = 328
+stateno = 328
+pos = 0,-30
+postype = p2
+facing = 1
+
+[State 0, Helper Polvo 2]
+type = Helper
+triggerall = p2movetype = H
+trigger1 = enemy,stateno = 326 && numhelper(329) = 0
+helpertype = normal
+name = "Helper Polvo"
+ID = 329
+stateno = 329
+pos = 0,-40
+postype = p2
+facing = 1
+;===============================================================================
+; Tsukuyomi Mode:
+;-------------------------------------------------------------------------------
+[State 0, Pause]
+type = Pause
+trigger1 = helper(1350),time > 10
+trigger1 = helper(1350),stateno = 1350
+trigger1 = numhelper(1350) = 1
+trigger1 = timemod = 2,0
+trigger1 = p2bodydist x = [-50,50]
+trigger1 = p2bodydist y = [-50,50]
+time = 1
+movetime = 1
+
+[State 0, AssertSpecial]
+type = AssertSpecial
+triggerall = stateno = 200||stateno = 300||stateno = 400
+trigger1 = helper(1350),time > 10
+trigger1 = helper(1350),stateno = 1350
+trigger1 = numhelper(1350) = 1
+trigger1 = p2bodydist x = [-50,50]
+trigger1 = p2bodydist y = [-50,50]
+flag = Unguardable
+
+[State 0, HitOverride]
+type = HitOverride
+triggerall = random < 500
+trigger1 = helper(1350),time > 10
+trigger1 = helper(1350),stateno = 1350
+trigger1 = numhelper(1350) = 1
+trigger1 = p2bodydist x = [-50,50]
+trigger1 = p2bodydist y = [-50,50]
+attr = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+stateno = 1380
+ignorehitpause = 0
+;===============================================================================
+; Turn Transformaciones:
+;-------------------------------------------------------------------------------
+[State -3, Turn EDO]
+type = ChangeAnim
+trigger1 = var(3) = 1
+trigger1 = anim = 5
+value = 2005
+;===============================================================================
+; Air Jump y Limitador Air Jump:
+;-------------------------------------------------------------------------------
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 0 && stateno = 40 && prevstateno = 50
+trigger2 = var(5) = 0 && stateno = 40 && prevstateno = [60,70]
+v = 5
+value = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 1 && pos y >= 0
+v = 5
+value = 0
+
+[State 0, Air Jump]
+type = ChangeState
+triggerall = stateno = 50
+triggerall = pos y < -20
+triggerall = var(5) = 0
+triggerall = time > 10
+trigger1 = ailevel = 0 && command = "up"
+trigger2 = roundstate = 2 && ailevel > 0 && random < (ailevel * 100) && p2bodydist y < - 30
+trigger3 = roundstate = 2 && ailevel > 0 && random < (ailevel * 100)/8
+value = 40
+ctrl = 1
+;===============================================================================
+; GUARD SPARK:
+;-------------------------------------------------------------------------------
+[State 0, Guard Spark]
+type = Explod
+triggerall = numexplod(7010) = 0
+trigger1 = moveguarded = 1
+anim = 7010
+ID = 7010
+postype = P2
+pos = 8,-30
+facing = 1
+sprpriority = 2
+supermove = 1
+removetime = -2
+bindtime = 1
+ownpal = 1
+scale = .6,.6
+removeongethit = 1
+ontop = 1
+ignorehitpause = 1
+;===============================================================================
+; Edo Tensei Costume:
+;-------------------------------------------------------------------------------
+[State -3, VarSet - EDO]
+type = VarSet
+trigger1 = palno = 7
+v = 3
+value = 1
+
+[State -3, VarSet, Golpeado]
+type = VarSet
+trigger1 = var(3) = 1
+v = 10
+value = 1000
+
+[State -3, VarSet, Apariencia]
+type = VarSet
+trigger1 = var(3) = 1
+v = 11
+value = 2000
+
+[State -3, VarSet, Specials]
+type = VarSet
+trigger1 = var(3) = 1
+v = 14
+value = 3000
+
+[State -3, VarSet, Susanoo]
+type = VarSet
+trigger1 = var(3) = 1
+v = 13
+value = 10000
+;===============================================================================
+; SUSANOO:
+;-------------------------------------------------------------------------------
+[State 0, Escudo Invisible]
+type = Helper
+trigger1 = stateno = [3001,3999]
+trigger1 = numhelper(3080) = 0
+helpertype = normal
+name = "Escudo Invisible"
+ID = 3080
+stateno = 3080
+pos = 0,0
+postype = p1
+supermove = 9999999999999
+pausemove = 999999999999
+supermovetime = 9999999999999
+pausemovetime = 999999999999
+size.ground.back = 50
+size.ground.front = 50
+size.air.back = 50
+size.air.front = 50
+size.height = 50
+
+[State 0, LifeAdd]
+type = LifeAdd
+trigger1 = stateno = [3001,3999]
+value = -var(2)
+ignorehitpause = 1

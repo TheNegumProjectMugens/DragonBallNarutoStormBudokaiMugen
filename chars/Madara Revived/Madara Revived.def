@@ -1,0 +1,32 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Madara Revived"
+displayname ="Madara (Revived)"
+versiondate =16/02/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Madara Revived.sff
+anim =Madara Revived.air
+sound =Madara Revived.snd
+cmd =Madara Revived.cmd
+cns =Madara Revived.cns
+stcommon =common1.cns
+st =Madara Revived.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+st3=Supers.cns
+st4=Susanoo.cns
+st5=RikudouMode.cns
+st6=Absolute_Destruction.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

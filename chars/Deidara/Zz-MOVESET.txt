@@ -1,0 +1,22 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Kibaku Nendo Socho
+
+D,DB,B,a - Kibaku Nendo Kumo
+
+D,DF,F,b - Sozo Hakai
+
+D,DB,B,b - C4
+
+D,DF,F,c - C3
+
+D,DB,B,c - C0

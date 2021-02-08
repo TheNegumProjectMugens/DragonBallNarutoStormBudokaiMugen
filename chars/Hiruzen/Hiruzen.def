@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Hiruzen"
+displayname ="Hiruzen"
+versiondate =14/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Hiruzen.sff
+anim =Hiruzen.air
+sound =Hiruzen.snd
+cmd =Hiruzen.cmd
+cns =Hiruzen.cns
+stcommon =common1.cns
+st =Hiruzen.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Tsunade"
+displayname ="Tsunade"
+versiondate =19/11/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Tsunade.sff
+anim =Tsunade.air
+sound =Tsunade.snd
+cmd =Tsunade.cmd
+cns =Tsunade.cns
+stcommon =common1.cns
+st =Tsunade.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

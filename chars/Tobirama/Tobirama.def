@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Tobirama"
+displayname ="Tobirama"
+versiondate =11/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Tobirama.sff
+anim =Tobirama.air
+sound =Tobirama.snd
+cmd =Tobirama.cmd
+cns =Tobirama.cns
+stcommon =common1.cns
+st =Tobirama.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

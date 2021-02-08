@@ -1,0 +1,26 @@
+[Info]
+name="Future Trunks"
+displayname="Trunks"
+versiondate=11/25/2016
+mugenversion=1.0
+author="SuperNaruto 64"
+pal.defaults=1,2,3,4,5,6
+[Files]
+sprite=Future Trunks.sff
+sound=Future Trunks.snd
+anim=Future Trunks.air
+cmd=Future Trunks.cmd
+cns=Future Trunks.cns
+st=Future Trunks.cns
+stcommon=common1.cns
+pal1=1.act
+pal2=2.act
+pal3=3.act
+pal4=4.act
+pal5=5.act
+pal6=6.act
+st1=Specials.cns
+st2=Super.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=

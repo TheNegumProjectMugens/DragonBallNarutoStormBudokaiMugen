@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Naruto Sennin"
+displayname ="Naruto (Sennin)"
+versiondate =26/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Naruto Sennin.sff
+anim =Naruto Sennin.air
+sound =Naruto Sennin.snd
+cmd =Naruto Sennin.cmd
+cns =Naruto Sennin.cns
+stcommon =common1.cns
+st =Naruto Sennin.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

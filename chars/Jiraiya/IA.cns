@@ -1,0 +1,448 @@
+;===============================================================================
+; INTELIGENCIA ARTIFICIAL:
+;===============================================================================
+[Statedef -2]
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = prevstateno = 1600 && time = 1
+id = 1630
+
+[State 0, StopSnd]
+type = StopSnd
+trigger1 = prevstateno = 1600 && time = 1
+channel = 4
+
+[State 0, Run]
+type = ChangeState
+triggerall = var(5) = 0
+triggerall = stateno != 60
+triggerall = stateno != 65
+triggerall = stateno != 70
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x > 100
+trigger1 = random < (ailevel * 100)/2
+value = ifelse(pos y >= 0,60,65)
+
+[State 0, Run Atras]
+type = ChangeState
+triggerall = var(5) = 0
+triggerall = stateno != 60
+triggerall = stateno != 65
+triggerall = stateno != 70
+triggerall = backedgebodydist > 50
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 100 && p2movetype = A
+trigger1 = random < (ailevel * 100)/4
+value = 70
+
+[State 0, Guard]
+type = ChangeState
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = (p2bodydist x < 50 && p2movetype = A) || (enemy,numproj > 0)
+trigger1 = random < (ailevel * 100)/2
+value = ifelse(statetype = A,132,130)
+
+; SENNIN MODE:
+
+[State 0, SENNIN MODE]
+type = ChangeState
+triggerall = var(3) = 0
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)
+value = 1600
+
+; GOLPES NORMALES:
+
+[State 0, A,B & C]
+type = ChangeState
+triggerall = var(3) = 0
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+trigger1 = random < (ailevel * 100)
+value = ifelse(random < 500,200,ifelse(random < 500,300,ifelse(var(2) = 1,2400,400)))
+
+[State 0, Air Combo]
+type = ChangeState
+triggerall = var(3) = 0
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [-30,30]
+trigger1 = random < (ailevel * 100)
+value = ifelse(random < 500,600,800)
+
+[State 0, Air Rasengan]
+type = ChangeState
+triggerall = pos y < -70
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [30,80]
+trigger1 = random < (ailevel * 100)/2
+value = 900
+
+; GOLPES NORMALES SENNIN MODE:
+
+[State 0, A,B & C SENNIN]
+type = ChangeState
+triggerall = var(3) = 1
+triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x < 30
+trigger1 = random < (ailevel * 100)
+value = ifelse(random < 500,2200,ifelse(random < 500,2300,ifelse(var(2) = 1,2400,2400)))
+
+[State 0, Air Combo SENNIN]
+type = ChangeState
+triggerall = var(3) = 1
+triggerall = statetype = A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl
+triggerall = p2bodydist x = [-30,30]
+trigger1 = random < (ailevel * 100)
+value = 2600
+
+; SPECIALS:
+
+[State 0, Rasengan(HOLD)]
+type = ChangeState
+triggerall = var(3) = 0
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,200]
+trigger1 = random < (ailevel * 100)/2
+value = 1000
+
+[State 0, Cho Oodama Rasengan]
+type = ChangeState
+triggerall = var(3) = 0
+Triggerall = power >= 2500
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x < 50
+trigger1 = random < (ailevel * 100)*1.5
+value = 1100
+
+[State 0, Kuchiyose Yatai Kuzushi no Jutsu]
+type = ChangeState
+triggerall = var(3) = 0
+Triggerall = numhelper(1250) = 0
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [75,150]
+trigger1 = random < (ailevel * 100)/2
+value = 1200
+
+[State 0, Hari Jizo]
+type = ChangeState
+triggerall = var(3) = 0
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+trigger1 = p2bodydist x < 30
+trigger1 = random < (ailevel * 100)/4
+trigger2 = p2bodydist x >= 100
+trigger2 = random < (ailevel * 100)/2
+trigger2 = p2movetype = A
+value = 1300
+
+[State 0, Kekkai Tengai Hojin]
+type = ChangeState
+triggerall = var(3) = 0
+triggerall = numhelper(1490) = 0
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [50,100]
+trigger1 = random < (ailevel * 100)/2
+value = 1480
+
+[State 0, Katon Gamayu Endan]
+type = ChangeState
+triggerall = var(3) = 0
+Triggerall = power >= 3000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [150,250]
+trigger1 = random < (ailevel * 100)*2
+value = 1500
+
+; SPECIALS SENNIN MODE:
+
+[State 0, Rasengan(HOLD)]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,200]
+trigger1 = random < (ailevel * 100)/2
+value = 3000
+
+[State 0, Katon Dai Endan]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 1500
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,200]
+trigger1 = random < (ailevel * 100)
+value = 3100
+
+[State 0, Senpo Kebari Senbon]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 1000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x >= 100
+trigger1 = random < (ailevel * 100)/2
+value = 3200
+
+[State 0, Magen Gamarinsho]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 3000
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,200]
+trigger1 = random < (ailevel * 100)*2
+value = 3300
+
+[State 0, Senpo Goemon]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 1500
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,200]
+trigger1 = random < (ailevel * 100)
+value = 3400
+
+[State 0, Senpo Cho Oodama Rasengan]
+type = ChangeState
+triggerall = var(3) = 1
+Triggerall = power >= 2500
+Triggerall = statetype != A
+triggerall = ailevel > 0 && roundstate = 2
+triggerall = ctrl || numhelper(700) > 0
+triggerall = p2bodydist x = [100,300]
+trigger1 = random < (ailevel * 100)*1.5
+value = 3600
+;===============================================================================
+;---------------------------Estados usados Siempre------------------------------
+;===============================================================================
+[Statedef -3]
+[State 0, Helper de Conexiones]
+type = Helper
+Triggerall = numhelper(700) = 0
+trigger1 = stateno = 200 && movecontact
+trigger2 = stateno = 210 && movecontact
+trigger3 = stateno = 220 && movecontact
+trigger4 = stateno = 230 && time > 15 && numhelper(240) = 0
+trigger5 = stateno = 300 && movecontact
+trigger6 = stateno = 310 && movecontact
+trigger7 = stateno = 320 && movecontact
+trigger8 = stateno = 400 && movecontact
+trigger9 = stateno = 410 && movecontact
+trigger10 = stateno = 420 && movecontact
+trigger11 = stateno = 430 && time > 50
+trigger12 = stateno = 1002 && time > 5 && numhelper(1050) = 0
+trigger13 = stateno = 1004 && time > 5 && numhelper(1060) = 0
+trigger14 = stateno = 1005 && time > 5 && numhelper(1070) = 0
+trigger15 = var(4) = 0 && stateno = 1101 && time > 5
+trigger16 = stateno = 1200 && time > 60
+trigger17 = stateno = 1300 && time > 80
+trigger18 = stateno = 1400 && time > 45 && numhelper(1450) = 0
+trigger19 = stateno = 1480 && time > 58
+helpertype = normal
+name = "Helper de Conexiones"
+ID = 700
+stateno = 700
+pos = 999999,999999
+postype = p1
+
+[State 0, Helper de Conexiones Sennin]
+type = Helper
+Triggerall = numhelper(700) = 0
+trigger1 = stateno = 2200 && movecontact
+trigger2 = stateno = 2210 && movecontact
+trigger3 = stateno = 2300 && movecontact
+trigger4 = stateno = 2310 && time > 40
+trigger5 = stateno = 2320 && time > 40
+trigger6 = stateno = 2400 && movecontact
+trigger7 = stateno = 2410 && movecontact
+trigger8 = stateno = 2420 && time > 9 && numhelper(2425) = 0
+trigger9 = stateno = 3002 && time > 5 && numhelper(3050) = 0
+trigger10 = stateno = 3005 && time > 5 && numhelper(3070) = 0
+trigger11 = stateno = 3100 && time > 30 && numhelper(3150) = 0
+trigger12 = stateno = 3200 && time > 120
+trigger13 = stateno = 3400 && time > 30 && numhelper(3450) = 0
+trigger14 = var(4) = 0 && stateno = 3501 && time > 5
+helpertype = normal
+name = "Helper de Conexiones"
+ID = 700
+stateno = 700
+pos = 999999,999999
+postype = p1
+
+[State 0, Helper Pared]
+type = Helper
+trigger1 = enemy,stateno = 2236 && numhelper(2240) = 0
+helpertype = normal
+name = "Helper Pared"
+ID = 2240
+stateno = 2240
+pos = 0,-30
+postype = p2
+facing = 1
+
+[State 0, Helper Polvo]
+type = Helper
+triggerall = p2movetype = H
+trigger1 = enemy,stateno = 2235 && numhelper(2245) = 0
+helpertype = normal
+name = "Helper Polvo"
+ID = 2245
+stateno = 2245
+pos = 0,-40
+postype = p2
+facing = 1
+;===============================================================================
+; Kekkai Tengai Hojin:
+;-------------------------------------------------------------------------------
+[State 0, HitOverride]
+type = HitOverride
+triggerall = random < 500
+trigger1 = helper(1490),time > 10
+trigger1 = helper(1490),stateno = 1490
+trigger1 = numhelper(1490) = 1
+trigger1 = p2bodydist x = [-100,100]
+trigger1 = p2bodydist y = [-100,100]
+attr = SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+stateno = 1498
+ignorehitpause = 0
+;===============================================================================
+; Turn Transformaciones:
+;-------------------------------------------------------------------------------
+[State -3, Turn Sennin]
+type = ChangeAnim
+trigger1 = var(3) = 1
+trigger1 = anim = 5
+value = 2005
+;===============================================================================
+; Air Jump y Limitador Air Jump:
+;-------------------------------------------------------------------------------
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 0 && stateno = 40 && prevstateno = 50
+trigger2 = var(5) = 0 && stateno = 40 && prevstateno = [60,70]
+v = 5
+value = 1
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = var(5) = 1 && pos y >= 0
+v = 5
+value = 0
+
+[State 0, Air Jump]
+type = ChangeState
+triggerall = stateno = 50
+triggerall = pos y < -20
+triggerall = var(5) = 0
+triggerall = time > 10
+trigger1 = ailevel = 0 && command = "up"
+trigger2 = roundstate = 2 && ailevel > 0 && random < (ailevel * 100) && p2bodydist y < - 30
+trigger3 = roundstate = 2 && ailevel > 0 && random < (ailevel * 100)/8
+value = 40
+ctrl = 1
+;===============================================================================
+; GUARD SPARK:
+;-------------------------------------------------------------------------------
+[State 0, Guard Spark]
+type = Explod
+triggerall = numexplod(7010) = 0
+trigger1 = moveguarded = 1
+anim = 7010
+ID = 7010
+postype = P2
+pos = 8,-30
+facing = 1
+sprpriority = 2
+supermove = 1
+removetime = -2
+bindtime = 1
+ownpal = 1
+scale = .6,.6
+removeongethit = 1
+ontop = 1
+ignorehitpause = 1
+;===============================================================================
+; Sennin Mode:
+;-------------------------------------------------------------------------------
+[State -3, VarSet - Sennin Mode]
+type = VarSet
+trigger1 = numhelper(1650) = 1
+v = 3
+value = 1
+
+[State 0, Fin Forzado]
+type = ChangeState
+triggerall = var(3) = 1
+trigger1 = numhelper(1650) = 0
+trigger1 = stateno = [0,20]
+value = 1625
+
+[State -3, VarSet, Golpeado]
+type = VarSet
+trigger1 = var(3) = 1
+v = 10
+value = 1000
+
+[State -3, VarSet, Apariencia]
+type = VarSet
+trigger1 = var(3) = 1
+v = 11
+value = 2000
+
+[State 0, PowerAdd]
+type = PowerAdd
+trigger1 = var(3) = 1
+value = 2
+;-------------------------------------------------------------------------------
+; COMUNES:
+[State -3, VarSet,Apariencia]
+type = VarSet
+trigger1 = var(3) = 0
+v = 11
+value = 0
+
+[State -3, VarSet,Golpeado]
+type = VarSet
+trigger1 = var(3) = 0
+v = 10
+value = 0

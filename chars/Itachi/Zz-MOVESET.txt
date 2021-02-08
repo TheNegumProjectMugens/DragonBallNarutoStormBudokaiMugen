@@ -1,0 +1,44 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Katon Gokakyu no Jutsu
+
+D,DB,B,a - Katon Hosenka no Jutsu
+
+D,DF,F,b - Amaterasu
+
+D,DB,B,b - Tsukuyomi Mode
+
+D,DF,F,c - Explosive Kage Bunshin
+
+D,DB,B,c - Suiton Suiryudan no Jutsu
+
+TRANSFORM:
+
+* SUSANOO:
+
+Down + S - Susanoo
+
+Susanoo Movelist:
+
+A - Slash Combo 1
+
+B - Slash Combo 2
+
+C - Yasaka
+
+SPECIALS:
+
+D,DF,F,a - Yasaka no Magatama
+
+D,DF,F,b - Susanoo Amaterasu
+
+D,DF,F,c - Totsuka no Tsurugi

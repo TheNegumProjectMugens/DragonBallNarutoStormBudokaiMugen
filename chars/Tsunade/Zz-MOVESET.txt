@@ -1,0 +1,24 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Jisuberi
+
+D,DB,B,a - Iryo Ninjutsu
+
+D,DF,F,b - Solid Gold Fist
+
+D,DB,B,b - Kuchiyose Katsuyu Zesshi Nensan
+
+D,DF,F,c - Tsutenkyaku
+
+D,DB,B,c - Gokuraku Jodo
+
+Down + S - Byakugo Mode

@@ -1,0 +1,29 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Naruto Start"
+displayname ="Naruto"
+versiondate =26/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Naruto Start.sff
+anim =Naruto Start.air
+sound =Naruto Start.snd
+cmd =Naruto Start.cmd
+cns =Naruto Start.cns
+stcommon =common1.cns
+st =Naruto Start.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+st3=4Tails.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

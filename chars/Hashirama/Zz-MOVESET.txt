@@ -1,0 +1,26 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A In Air - Air Combo 1
+
+B In Air - Air Combo 2
+
+C In Air - Mokuton Arm
+
+SPECIALS:
+
+D,DF,F,a - Mokuton Jurin Taiho
+
+D,DB,B,a - Mokuton Yukai Kotan
+
+D,DF,F,b - Mokuton Mokuryu no Jutsu
+
+D,DB,B,b - Mokuton Kajukai Korin
+
+D,DF,F,c - Senpo Mokuton Shin Susenju
+
+D,DB,B,c - Kuchiyose Goju Rashomon

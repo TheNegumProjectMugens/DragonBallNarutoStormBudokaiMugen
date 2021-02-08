@@ -1,0 +1,29 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Jiraiya"
+displayname ="Jiraiya"
+versiondate =04/10/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Jiraiya.sff
+anim =Jiraiya.air
+sound =Jiraiya.snd
+cmd =Jiraiya.cmd
+cns =Jiraiya.cns
+stcommon =common1.cns
+st =Jiraiya.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+st3=SenninMode.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

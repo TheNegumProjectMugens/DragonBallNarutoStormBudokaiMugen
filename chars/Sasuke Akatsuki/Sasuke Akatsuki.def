@@ -1,0 +1,28 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name ="Sasuke Akatsuki"
+displayname ="Sasuke (Akatsuki)"
+versiondate =27/11/2016
+mugenversion =1.0
+author ="Mikel8888"
+pal.defaults =1
+
+[Files]
+sprite =Sasuke Akatsuki.sff
+anim =Sasuke Akatsuki.air
+sound =Sasuke Akatsuki.snd
+cmd =Sasuke Akatsuki.cmd
+cns =Sasuke Akatsuki.cns
+stcommon =common1.cns
+st =Sasuke Akatsuki.cns
+pal1=1.act
+st1=IA.cns
+st2=Specials.cns
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 

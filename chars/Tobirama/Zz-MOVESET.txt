@@ -1,0 +1,22 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Suiton Suiryudan no Jutsu
+
+D,DB,B,a - Suiton Suidanha
+
+D,DF,F,b - Hiraishingiri
+
+D,DB,B,b - Gojo Kibaku Fuda
+
+D,DF,F,c - Suiton Suijinheki
+
+D,DB,B,c - Suiton Shigure

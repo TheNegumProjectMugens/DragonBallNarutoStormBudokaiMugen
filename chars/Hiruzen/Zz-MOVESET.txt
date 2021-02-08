@@ -1,0 +1,22 @@
+
+A - Combo 1
+
+B - Combo 2
+
+C - Combo 3
+
+A, B or C In Air - Air Combo
+
+SPECIALS:
+
+D,DF,F,a - Katon Karyu Endan
+
+D,DB,B,a - Suiton Suihinheki
+
+D,DF,F,b - Giant Shuriken Kage Bunshin
+
+D,DB,B,b - Enma Speed Attack
+
+D,DF,F,c - Doton Doryudan
+
+D,DB,B,c - Shiki Fuujin
