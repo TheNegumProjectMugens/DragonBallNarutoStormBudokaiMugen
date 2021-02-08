@@ -1,0 +1,70 @@
+[Info]
+name = "Naruto - Examende Chunnin"
+;-------------------------------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -150
+boundright = 150
+boundhigh = 0
+boundlow = 0
+verticalfollow = .2
+floortension = 0
+tension = 50
+;-------------------------------------------------------------------------------
+[PlayerInfo]
+p1startx = -70
+p1starty = 0
+p1startz = 0
+p1facing = 1
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+leftbound  = -1000
+rightbound =  1000
+topbound  =  0
+botbound  =  0
+;-------------------------------------------------------------------------------
+[Scaling]
+topz     = 0
+botz     = 50
+topscale = 1
+botscale = 1.2
+;-------------------------------------------------------------------------------
+[Bound]
+screenleft = 15
+screenright = 15
+;-------------------------------------------------------------------------------
+[StageInfo]
+zoffset = 229
+autoturn = 1
+resetBG = 1
+hires = 1
+;-------------------------------------------------------------------------------
+[Shadow]
+intensity = 96
+color = 0,0,0
+yscale = .3
+fade.range = 0,0
+;-------------------------------------------------------------------------------
+[Reflection]
+intensity = 0
+;-------------------------------------------------------------------------------
+[Music]
+bgmusic = sound/Examendechunnin.mp3
+bgvolume = 255
+;-------------------------------------------------------------------------------
+[BGdef]
+spr = Examendechunnin.sff
+debugbg = 0
+;================================================================================
+;              COMPONENTES DEL STAGE:
+;================================================================================
+[BG FONDO]
+type = normal
+spriteno = 0,1
+start = 0,180
+delta = 1,1
+Layerno = 0
+delta = 2,2
