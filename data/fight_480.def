@@ -1,0 +1,648 @@
+﻿; Definition of fight screen
+
+; Motif: MUGEN1
+; Optimal resolution: 1280x720
+
+; Notes about fonts:
+;   - up to 10 fonts can be specified in the [Files] section.
+;   - fonts indexed here do not refer to the ones in system.def
+;   - fonts are search in directories in the following order:
+;     1. system directory
+;     2. mugen program directory (not recommended to keep custom fonts here)
+;     3. data/ (not recommended to keep custom fonts here)
+;     4. font/
+;
+; See the section "How to Customize" at the end of
+; this file.
+
+;-----------------------------------------------------------
+;Directories are checked in this order:
+;1. current directory fight.def is in
+;2. data/
+;3. your MUGEN directory
+
+[Files]
+sff = fight.sff
+snd = fight.snd
+font1 = enter48.def
+font2 = num48.def
+font3 = name14.def
+font4 = num1.def
+fightfx.sff = fightfx.sff
+fightfx.air = fightfx.air
+common.snd = common.snd
+
+;-----------------------------------------------------------
+[FightFx]
+scale = 2
+
+;-----------------------------------------------------------
+[Lifebar]
+;Player 1
+p1.pos    = 295,20 
+p1.bg0.anim = 10
+p1.bg0.scale = 0.5,0.5
+p1.bg0.offset = -3,3 
+p1.bg1.spr = 11,0
+p1.bg1.scale = 0.5,0.5
+p1.mid.anim = 12
+p1.mid.scale = 0.5,0.5
+p1.mid.offset = -3,3 
+p1.front.spr = 13,0
+p1.front.scale = 0.5,0.5
+p1.front.offset = -3,3 
+
+p1.range.x  = -3,-216 
+
+;Player 2
+p2.pos    = 342,20 
+p2.bg0.anim = 10
+p2.bg0.scale = 0.5,0.5
+p2.bg0.offset = 3,3 
+p2.bg0.facing = -1
+p2.bg1.spr = 11,0
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.mid.anim = 12
+p2.mid.scale = 0.5,0.5
+p2.mid.offset = 3,3 ;6,6
+p2.mid.facing = -1
+p2.front.spr = 13,0
+p2.front.scale = 0.5,0.5
+p2.front.offset = 3,3 
+p2.front.facing = -1
+
+p2.range.x = 3,216 
+
+[Begin Action 10] ;Darkened lifebar background 
+10,0, 0,0, 1, , AS224D32
+
+[Begin Action 12] ;Blinking lifebar midground
+12,0, 0,0, 1
+12,1, 0,0, 1
+12,2, 0,0, 1
+12,3, 0,0, 1
+12,4, 0,0, 1
+12,5, 0,0, 1
+12,4, 0,0, 1
+12,3, 0,0, 1
+12,2, 0,0, 1
+12,1, 0,0, 1
+
+;=============================
+[Simul Lifebar]
+;Player 1
+p1.pos    = 295,20 
+p1.bg0.anim = 20
+p1.bg0.scale = 0.5,0.5
+p1.bg0.offset = -3,3 
+p1.bg1.spr = 11,0
+p1.bg1.scale = 0.5,0.5
+p1.mid.anim = 12
+p1.mid.scale = 0.5,0.25 
+p1.mid.offset = -3,3 
+p1.front.spr = 13,0
+p1.front.scale = 0.5,0.25 
+p1.front.offset = -3,3 
+p1.front.scale = 0.5,0.5 
+p1.range.x  = -3,-216  
+
+;Player 2
+p2.pos    = 342,20 
+p2.bg0.anim = 20
+p2.bg0.scale = 0.5,0.5
+p2.bg0.offset = 3,3 
+p2.bg0.facing = -1
+p2.bg1.spr = 11,0
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.mid.anim = 12
+p2.mid.scale = 0.25,0.5
+p2.mid.offset = 3,3 
+p2.mid.facing = -1
+p2.mid.scale = 0.5,0.5 
+p2.front.spr = 13,0
+p2.front.scale = 0.5,0.25 
+p2.front.offset = 3,3 
+p2.front.facing = -1
+p2.front.scale = 1,0.5
+p2.range.x = 3,216 
+
+;Player 3
+p3.pos    = 295,20 
+p3.mid.anim = 12
+p3.mid.scale = 0.5,0.25 
+p3.mid.offset = -3,8 
+p3.front.spr = 13,0
+p3.front.offset = -3,8 
+p3.front.scale = 0.5,0.25 
+p3.range.x  = -3,-216 
+
+;Player 4
+p4.pos    = 342,20 
+p4.mid.spr = 12,0
+p4.mid.scale = 0.5,0.25 
+p4.mid.offset = 3,8 
+p4.mid.facing = -1
+p4.front.spr = 13,0
+p4.front.scale = 0.5,0.25 
+p4.front.offset = 3,8 
+p4.front.facing = -1
+p4.range.x = 3,216 ;6,433
+
+[Begin Action 20] ;Darkened lifebar background (simul)
+20,0, 0,0, 1, , AS224D32
+
+;=============================
+[Turns Lifebar]
+;Player 1
+p1.pos    = 295,20 
+p1.bg0.anim = 10
+p1.bg0.scale = 0.5,0.5
+p1.bg0.offset = -3,3 
+p1.bg1.spr = 11,0
+p1.bg1.scale = 0.5,0.5
+p1.mid.anim = 12
+p1.mid.scale = 0.5,0.5
+p1.mid.offset = -3,3 
+p1.front.spr = 13,0
+p1.front.scale = 0.5,0.5
+p1.front.offset = -3,3 
+p1.range.x  = -3,-216 
+
+;Player 2
+p2.pos    = 342,20 
+p2.bg0.anim = 10
+p2.bg0.scale = 0.5,0.5
+p2.bg0.offset = 3,3 
+p2.bg0.facing = -1
+p2.bg1.spr = 11,0
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.mid.anim = 12
+p2.mid.scale = 0.5,0.5
+p2.mid.offset = 3,3 
+p2.mid.facing = -1
+p2.front.spr = 13,0
+p2.front.scale = 0.5,0.5
+p2.front.offset = 3,3 
+p2.front.facing = -1
+p2.range.x = 3,216 ;6,433
+
+;-----------------------------------------------------------
+[Powerbar]
+;Player 1
+p1.pos    = 295,35 
+p1.bg0.anim = 40
+p1.bg0.scale = 0.75,0.75
+p1.bg0.offset = -4,3 
+p1.bg1.spr = 41,0
+p1.bg1.scale = 0.75,0.75
+;p1.mid.spr = 42,0
+p1.front.anim = 43
+p1.front.scale = 0.75,0.75
+p1.front.offset = -4,3
+p1.range.x = -4,-184 
+p1.counter.offset = -193,11 
+p1.counter.font = 4,0, 0, 242,242,255
+p1.counter.scale = 0.75,0.75
+
+;Player 2
+p2.pos    = 342,35 
+p2.bg0.anim = 40
+p2.bg0.scale = 0.7575,0.75
+p2.bg0.offset = 4,3 ;6,4
+p2.bg0.facing = -1
+p2.bg1.spr = 41,0
+p2.bg1.scale = 0.75,0.75
+p2.bg1.facing = -1
+;p2.mid.spr = 42,0
+;p2.mid.facing = -1
+p2.front.anim = 43
+p2.front.scale = 0.75,0.75
+p2.front.offset = 4,3 
+p2.front.facing = -1
+p2.range.x  = 4,184 
+p2.counter.offset = 194,11 
+p2.counter.font = 4,0, 0, 242,242,255
+p2.counter.scale = 0.75,0.75
+
+; --level sounds---
+level1.snd = 21,0
+level2.snd = 21,0
+level3.snd = 21,0
+
+[Begin Action 40] ;Darkened powerbar background 
+40,0, 0,0, 1, , AS224D32
+
+[Begin Action 43] ;Flashing powerbar
+43,0, 0,0, 15
+43,1, 0,0, 1
+43,2, 0,0, 1
+43,3, 0,0, 1
+43,4, 0,0, 1
+43,5, 0,0, 1
+43,6, 0,0, 1
+43,7, 0,0, 1
+43,8, 0,0, 1
+43,9, 0,0, 1
+43,10, 0,0, 1
+43,11, 0,0, 1
+43,12, 0,0, 1
+43,13, 0,0, 1
+43,14, 0,0, 1
+43,15, 0,0, 1
+43,16, 0,0, 1
+43,17, 0,0, 1
+
+
+;-----------------------------------------------------------
+[Face]
+;Player 1
+p1.pos    = 10,10 
+p1.bg0.spr = 50,0
+p1.bg0.scale = 0.5,0.5
+p1.bg1.anim = 51
+p1.bg1.scale = 0.5,0.5
+p1.face.spr = 9000,0
+p1.face.scale = 1,1
+p1.face.facing = 1
+p1.face.offset = 0,0
+
+;Player 2
+p2.pos    = 628,10 
+p2.bg0.spr = 50,0
+p2.bg0.scale = 0.5,0.5
+p2.bg0.facing = -1
+p2.bg1.anim = 51
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.face.spr = 9000,0
+p2.face.scale = 1,1
+p2.face.facing = -1
+p2.face.offset = 0,0
+
+[Begin Action 51] ;Darkened face background 
+51,0, 0,0, 1, , AS208D48
+
+[Simul Face]
+;Player 1
+p1.pos    = 10,10 
+p1.bg0.spr = 50,0
+p1.bg0.scale = 0.5,0.5
+p1.bg1.anim = 51
+p1.bg1.scale = 0.5,0.5
+p1.face.spr = 9000,0
+p1.face.facing = 1
+
+;Player 2
+p2.pos    = 628,10 
+p2.bg0.spr = 50,0
+p2.bg0.scale = 0.5,0.5
+p2.bg0.facing = -1
+p2.bg1.anim = 51
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.face.spr = 9000,0
+p2.face.facing = -1
+
+;Player 3
+p3.pos    = 69,54 
+p3.bg0.spr = 70,0
+p3.bg0.scale = 0.5,0.5
+p3.bg1.anim = 71
+p3.bg1.scale = 0.5,0.5
+p3.face.spr = 9000,0
+p3.face.scale = 0.4,0.4
+p3.face.facing = 1
+
+;Player 4
+p4.pos    = 568,54 
+p4.bg0.spr = 70,0
+p4.bg0.scale = 0.5,0.5
+p4.bg0.facing = -1
+p4.bg1.anim = 71
+p4.bg1.scale = 0.5,0.5
+p4.bg1.facing = -1
+p4.face.spr = 9000,0
+p4.face.scale = 0.4,0.4
+p4.face.facing = -1
+
+[Turns Face]
+;Player 1
+p1.pos    = 10,10 
+p1.bg0.spr = 50,0
+p1.bg0.scale = 0.5,0.5
+p1.bg1.anim = 51
+p1.bg1.scale = 0.5,0.5
+p1.face.spr = 9000,0
+p1.face.facing = 1
+
+;Player 1's teammates
+p1.teammate.pos = 69,54 
+p1.teammate.spacing = 24,0 
+p1.teammate.bg0.spr = 70,0
+p1.teammate.bg0.scale = 0.5,0.5
+p1.teammate.bg1.anim = 71
+p1.teammate.bg1.scale = 0.5,0.5
+p1.teammate.ko.anim = 72
+p1.teammate.ko.scale = 0.5,0.5
+p1.teammate.face.spr = 9000,0
+p1.teammate.face.scale = 0.4,0.4
+p1.teammate.face.facing = 1
+
+;Player 2
+p2.pos    = 628,10 
+p2.bg0.spr = 50,0
+p2.bg0.scale = 0.5,0.5
+p2.bg0.facing = -1
+p2.bg1.anim = 51
+p2.bg1.scale = 0.5,0.5
+p2.bg1.facing = -1
+p2.face.spr = 9000,0
+p2.face.facing = -1
+
+;Player 2's teammates
+p2.teammate.pos = 568,54 
+p2.teammate.spacing = -24,0 
+p2.teammate.bg0.spr = 70,0
+p2.teammate.bg0.scale = 0.5,0.5
+p2.teammate.bg0.facing = -1
+p2.teammate.bg1.anim = 71
+p2.teammate.bg1.scale = 0.5,0.5
+p2.teammate.bg1.facing = -1
+p2.teammate.ko.anim = 72
+p2.teammate.ko.scale = 0.5,0.5
+p2.teammate.ko.facing = -1
+p2.teammate.face.spr = 9000,0
+p2.teammate.face.scale = 0.4,0.4
+p2.teammate.face.facing = -1
+
+[Begin Action 71] ;Darkened small face background 
+71,0, 0,0, 1, , AS208D48
+
+[Begin Action 72] ;KO overlay for small face
+72,0, 0,0, 1, , AS192D64
+
+;-----------------------------------------------------------
+[Name]
+p1.pos = 71,16 
+;p1.bg. =
+p1.name.font = 3,3, 1
+p1.name.scale = 0.5,1
+;p2.bg. =
+p2.pos = 567,16 
+p2.name.font = 3,1, -1
+p2.name.scale = 0.5,1
+
+[Simul Name]
+p1.pos = 71,16 
+p1.name.font = 3,3, 1
+p1.name.scale = 0.5,1
+p2.pos = 567,16 
+p2.name.font = 3,1, -1
+p2.name.scale = 0.5,1
+p3.pos = 93,74 
+p3.name.font = 3,3, 1
+p3.name.scale = 0.5,1
+p4.pos = 545,74 
+p4.name.font = 3,1, -1
+p4.name.scale = 0.5,1
+
+[Turns Name]
+p1.pos = 71,16 
+;p1.bg. =
+p1.name.font = 3,3, 1
+p1.name.scale = 0.5,1
+;p2.bg. =
+p2.pos = 567,16 
+p2.name.font = 3,1, -1
+p2.name.scale = 0.5,1
+
+;-----------------------------------------------------------
+[Time]
+pos = 319,42 
+;bg.spr = 
+; Time count display
+counter.offset = 0,0
+counter.font = 2,0, 0, 255,255,242
+counter.scale = 0.5,0.5
+; Ticks for each count
+framespercount = 60
+
+;-----------------------------------------------------------
+[Combo]
+team1.pos = 30,150          
+team1.start.x = -40        
+team1.counter.font = 2,3,1
+team1.counter.scale = 0.5,0.5   
+team1.counter.shake = 1     
+team1.text.text = "COMBO"   
+team1.text.font = 1,3,1  
+team1.text.scale = 0.5,0.5    
+team1.text.offset = 12,0    
+team1.displaytime = 90      
+
+team2.pos = 610,150         
+team2.start.x = 680         
+team2.counter.font = 2,3,-1 
+team2.counter.scale = 0.5,0.5   
+team2.counter.shake = 1     
+team2.text.text = "COMBO"   
+team2.text.font = 1,3,-1 
+team2.text.scale = 0.5,0.5 
+team2.text.offset = 12,0    
+team2.displaytime = 90       
+
+;-----------------------------------------------------------
+[Round]
+match.wins = 2              
+match.maxdrawgames = 1      
+start.waittime = 30         
+
+; Default position for all components
+pos = 0,0
+
+; ROUND X
+round.time = 0                 
+round.default.offset = 320,240 
+
+round.default.font = 1,0, 0
+round.default.text = "Round %i"
+round.default.displaytime = 60
+round.default.scale = 1,1
+
+round1.snd = 0,1
+round2.snd = 0,2
+round3.snd = 0,3
+round.sndtime = 0           
+
+;round1.offset = 160, 100
+;round1.anim = 
+
+; FIGHT
+fight.time = 0              
+fight.offset = 320,240	    
+fight.anim = 80             
+fight.scale = 0.5,0.5
+fight.snd = 1,0             
+fight.sndtime = 0           
+ctrl.time = 30              
+
+; KO
+KO.time    = 0              
+KO.offset  = 320,240  
+KO.scale   = 0.5,0.5      
+KO.anim    = 200            
+KO.snd     = 2,0            
+
+; Double KO
+DKO.offset = 320,240 ;640, 320
+DKO.font   = 1,5
+DKO.text   = "Double K.O."
+DKO.displaytime = 60
+DKO.snd    = 2,1
+
+; Time Over
+TO.offset  = 320,240 ;640, 320
+TO.font    = 1,5
+TO.text    = "Time Over"
+TO.displaytime = 60
+TO.snd     = 2,2
+KO.sndtime = 0             
+slow.time  = 60            
+over.waittime = 45         
+over.hittime = 10          
+over.wintime = 45          
+over.time = 210            
+
+; Time to wait before showing win/draw message
+win.time = 60
+; Win text
+win.offset = 320,240 ;640, 320
+win.font = 3,0
+win.text = "%s Wins"
+win.displaytime = 540
+
+; 2-player win text
+win2.offset = 320,240 ;640, 320
+win2.font = 3,0
+win2.text = "%s and %s Win"
+win2.displaytime = 540
+
+; Draw text
+draw.offset = 320,240 ;640, 320
+draw.font = 1,0
+draw.text = "Draw Game"
+draw.displaytime = 540
+
+;"Fight!" Animation
+[Begin Action 80]
+80,4, 0,0, 1
+80,3, 0,0, 1
+80,2, 0,0, 1
+80,1, 0,0, 1
+80,0, 0,0, 40
+80,0, 0,0, 1, , AS192D63
+80,0, 0,0, 1, , AS128D127
+80,0, 0,0, 1, , AS92D163
+80,0, 0,0, 1, , AS64D191
+80,0, 0,0, 1, , AS32D223
+
+;"K.O." Animation
+[Begin Action 200]
+-1,-1, 0,0, 5
+200,0, 0,0, 1, , AS255D255
+200,0, 0,0, 1, , AS255D224
+200,0, 0,0, 1, , AS255D192
+200,0, 0,0, 1, , AS255D160
+200,0, 0,0, 1, , AS255D128
+200,0, 0,0, 120
+200,0, 0,0, 1, , AS255D64
+200,0, 0,0, 1, , AS255D128
+200,0, 0,0, 1, , AS255D192
+200,0, 0,0, 1, , AS255D255
+200,0, 0,0, 1, , AS192D255
+200,0, 0,0, 1, , AS128D255
+200,0, 0,0, 1, , AS64D255
+
+;-----------------------------------------------------------
+[WinIcon]
+p1.pos = 287,12 
+p2.pos = 352,12 
+
+; Background icon
+p1.bg0.spr = 120,0
+p1.bg0.scale = 0.5,0.5
+p2.bg0.spr = 120,0
+p2.bg0.scale = 0.5,0.5
+
+; Offset for next icon (x,y)
+p1.iconoffset = -16,0  
+p2.iconoffset = 16,0
+
+; Counter text font and offset for representing wins
+p1.counter.offset = 0,5
+p1.counter.font = 4,0,0, 230,255,242
+p2.counter.offset = 1,5
+p2.counter.font = 4,0,0, 255,242,242
+
+; Win by normal
+p1.n.spr = 100,0
+p1.n.scale = 0.75,0.75
+p2.n.spr = 100,0
+p2.n.scale = 0.75,0.75
+
+; Win by special
+p1.s.spr = 101,0
+p1.s.scale = 0.75,0.75
+p2.s.spr = 101,0
+p2.s.scale = 0.75,0.75
+
+; Win by hyper (super)
+p1.h.spr = 102,0
+p1.h.scale = 0.75,0.75
+p2.h.spr = 102,0
+p2.h.scale = 0.75,0.75
+
+; Win by normal throw
+p1.throw.spr = 103,0
+p1.throw.scale = 0.75,0.75
+p2.throw.spr = 103,0
+p1.throw.scale = 0.75,0.75
+
+; Win by cheese
+p1.c.spr = 104,0
+p1.c.scale = 0.75,0.75
+p2.c.spr = 104,0
+p2.c.scale = 0.75,0.75
+
+; Win by time over
+p1.t.spr = 105,0
+p1.t.scale = 0.75,0.75
+p2.t.spr = 105,0
+p2.t.scale = 0.75,0.75
+
+; Win by suicide
+p1.suicide.spr = 106,0
+p1.suicide.scale = 0.75,0.75
+p2.suicide.spr = 106,0
+p2.suicide.scale = 0.75,0.75
+
+; Opponent beaten by his own teammate
+p1.teammate.spr = 107,0
+p1.teammate.scale = 0.75,0.75
+p2.teammate.spr = 107,0
+p2.teammate.scale = 0.75,0.75
+
+; Win by perfect (overlay icon)
+p1.perfect.spr = 110,0
+p1.perfect.scale = 0.75,0.75
+p2.perfect.spr = 110,0
+p2.perfect.scale = 0.75,0.75
+
+; Use icons up until this number of wins
+useiconupto = 3
+
+;-----------------------------------------------------------
+;-----------------------------------------------------------

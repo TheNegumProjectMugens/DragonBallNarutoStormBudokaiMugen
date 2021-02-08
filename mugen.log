@@ -1,0 +1,98 @@
+------------------------------------------
+M.U.G.E.N ver 1.00 (2011.01.18) status log
+------------------------------------------
+Parsing command line...
+Command line: C:\Users\Efinium\Downloads\Dragon Ball x Naruto Storm Budokai M.U.G.E.N v1 by TrafalgarLawzz\Dragon Ball x Naruto Storm Budokai M.U.G.E.N\Dragon Ball x Naruto Storm Budokai MUGEN.exe
+Parse command line OK
+Initializing...
+Allocating game variables
+Reading configuration file...OK
+Initializing timer...performance timer enabled...frequency 3215354...OK
+Initializing keyboard...configuring...OK
+Initializing input engine...OK
+Initializing sound...Using SDL audio driver: dsound
+Requesting mixer parameters (44100, 16, 2, 2048)...
+Opened mixer with parameters (44100, 16, 2, 2048)...
+OK
+Initializing BGM...BGMThreadInit returned 0
+OK
+Initializing graphics...gameCoord 640x480...render mode 0_0...trying 640x480x16 mode 0x0...success...OK
+Setting callbacks...OK
+Initializing font...OK
+Initializing game variables...OK
+Loading system fonts...OK
+Loading options...
+Initializing pads...failed
+Reinitializing input engine...OK
+Remapping keys...OK
+Reinitializing input engine...OK
+Options loaded OK
+Loading system...
+  Load system file system.def...OK
+  Load system spr...OK
+  Load system snd...OK
+  Load system fonts...OK
+  Load system anim...OK
+  Load [Title Info]...OK
+  Load [Option Info]...OK
+  Load [Select Info]...OK
+  Load [VS Screen]...OK
+  Load [Victory Screen]...OK
+  Load [Demo Mode]...OK
+  Load [Continue Screen]...OK
+  Load [Game Over Screen]...OK
+  Load [Win Screen]...OK
+  Load [Survival Results Screen]...OK
+  Load [Default Ending]...OK
+  Load [End Credits]...OK
+  Load TitleBG...VersusBG...VictoryBG...SelectBG...OptionBG...OK
+  Loading fight data
+    Opening fight data file data/Lifebars/fight.def...OK
+    Reading [Files]...OK
+    Loading fonts...OK
+    Load fight anim...OK
+    Reading [Lifebar]...[Turns Lifebar]...[Simul Lifebar]...[Powerbar]...
+    [Face]...[Simul Face]...[Turns Face]...
+    [Name]...[Simul Name]...[Turns Name]...
+    [Time]...[Combo]...[Round]...[WinIcon]...OK
+    Allocating explods...OK
+  Fight data loaded OK
+System loaded OK
+Initialize OK
+Set up graphics...timer...OK
+Initializing character info...OK
+Initializing select screen...finding characters...OK
+
+Entering main loop
+Entering character select.
+attempting load and start...attempting load of sound/menu.mp3...hooking mixer callback...
+success!
+starting BGM...
+Returned from main loop
+Deinitializing...
+Frames      : 0
+Time elapsed: 2.560 sec
+ticks: 256, tps: 100, start 39, end 295
+
+Clearing player cache...OK
+Freeing character info...OK
+Freeing select screen...OK
+Freeing fight data...OK
+Freeing system data...OK
+Freeing game variables...OK
+Deinitializing input...pad...keyboard...OK
+Removing callbacks...OK
+Deintializing timer...OK
+Deinitializing graphics...OK
+Deinitializing BGM...Cleaning up mixer callback...unhooking mixer callback...
+
+Mixer callback was entered 54 times
+Mixer callback timing stats (last 54 calls):
+	7.000000 median, 7.388889 avg, 3.848548 sample std. dev.
+Top 9 slowest times:	33 (1), 11 (2), 10 (3), 9 (1), 8 (11), 7 (16), 6 (7), 5 (11), 4 (2)
+Top 9 fastest times:	4 (2), 5 (11), 6 (7), 7 (16), 8 (11), 9 (1), 10 (3), 11 (2), 33 (1)
+OK
+Deinitializing sound...OK
+Successful program termination.
+
+Log file successfully closed.

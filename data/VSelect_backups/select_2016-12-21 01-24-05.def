@@ -1,0 +1,81 @@
+;------------------------------------------------------------------------------
+;;Insert your characters below.
+;------------------------------------------------------------------------------
+[Characters]
+Goku_Base
+Goku_SS
+Goku_SS2
+Goku_SS3
+Goku_SS4
+Vegeta_Majin
+Gohan_Teen_SS2
+Gohan_Ultimate
+Future Trunks
+Trunks_Future_SS
+Krilin
+Piccolo
+Freezer_4_Form
+Cell_Perfect_Form
+Kid_Buu
+randomselect
+Hiruzen
+Deidara
+Jiraiya
+Jiraiya Sennin
+empty
+Krilin
+Madara Revived
+Madara Rikudou
+Minato
+CLT_Sasuke_Hebi
+Itachi
+empty
+empty
+empty
+Hashirama
+empty
+;------------------------------------------------------------------------------
+;------------------------------------------------------------------------------
+[ExtraStages]
+stages\RS-drivetheater.def
+
+
+;------------------------------------------------------------------------------
+;------------------------------------------------------------------------------
+[Options]
+ ;Here you set the maximum number of matches to fight before game ends
+ ;in Arcade Mode. The first number is the number of matches against
+ ;characters with order=1, followed by order=2 and order=3 respectively.
+ ;For example, for 4,3,1 you will fight up to 4 randomly-picked
+ ;characters who have order=1, followed by 3 with order=2 and 1 with
+ ;order=3.
+arcade.maxmatches = 6,1,1,0,0,0,0,0,0,0
+
+ ;Maximum number of matches to fight before game ends in Team Mode.
+ ;Like arcade.maxmatches, but applies to Team Battle.
+team.maxmatches = 4,1,1,0,0,0,0,0,0,0
+
+;------------------------------------------------------------------------------
+;------------------------------------------------------------------------------
+;How to add characters
+;------------------------------------------------------------------------------
+;------------------------------------------------------------------------------
+; "charname, stagefilename"
+; * ORDER
+; Set the paramvalue to the ordering priority to give the character. 
+; Valid values are from 1 to 10. A smaller value means you will fight the 
+; character sooner. You will never fight an order 2 character before an 
+; order 1 character, and never an order 3 character before an order 2 one.
+; For example, you might want to set your boss character to have order=3. 
+; The default order value is 1 if you omit this param. See *.maxmatches 
+; under [Options] for how to limit the number of matches per order priority.
+;
+; Some examples:
+;      kfm, stages/mybg.def, includestage=0
+;      kfm, stages/mybg.def, music=sound/song.mp3
+;      kfm, stages/mybg.def, music=sound/song.mp3, includestage=0
+;      kfm, stages/mybg.def, order=3
+;
+;You can also add a randomize icon to the select screen. To do
+;this, put the word "randomselect" on a line of its own, with no
+;extra parameters.
